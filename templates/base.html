@@ -43,22 +43,14 @@
 	    <form class="form-inline my-2 my-lg-0" method="GET">
 
 	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ request.args.get('q', '', ) }}">
-	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href='login.html'>Sing in </button>
 	    </form>
 	  </div>
 	</nav>	
 	<div class="container">
-		<h1>
-			{% block content_title %}
-
-			{% endblock %}
-		</h1>
-
 			{% block content %}
 
 			{% endblock %} 
-
-
   </div>
 </div>
 </body>
