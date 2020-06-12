@@ -5,6 +5,10 @@
 	Login
 {% endblock %}
 
+{% block link%}
+<link href="login.css" rel='stylesheet'>
+{% endblock %}
+
 
 {% block content %}
 	<div class="content-section">
@@ -59,6 +63,5 @@
 			Need an account ? <a class="ml-2" href="{{ url_for('register') }}">Sing up</a>
 		</small>
 	</div>	
-
 	
 {% endblock %}
