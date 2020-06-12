@@ -6,11 +6,15 @@ from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base  
 from sqlalchemy.orm import relationship  
 from sqlalchemy import create_engine  
+from app import login_manager
+
+
+
+
 
 def slugify(s):
 	pattern = r'[^\w+]'
 	return re.sub(pattern,'-', s)
-
 
 class User(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
