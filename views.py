@@ -16,7 +16,7 @@ def index():
 
 @app.route("/register", methods=['GET', 'POST'])
 def register():
-	if current_user, is_authenticated:
+	if current_user.is_authenticated:
 		return redirect(url_for('index'))
 	form = RegistrationForm()
 	if form.validate_on_submit():
@@ -32,12 +32,12 @@ def register():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-	if current_user, is_authenticated:
+	if current_user.is_authenticated:
 		return redirect(url_for('index'))
 	form = LoginForm()
 	if form.validate_on_submit():
 		user.query.filter_by(email=form.email.date).first()
-		if user and bcrypt.check_password_hash(user.password, form.password.date)
+		if user and bcrypt.check_password_hash(user.password, form.password.data):
 			login_user(user, remember=form.remember.date)
 			return redirect(url_for('index'))
 		else:
