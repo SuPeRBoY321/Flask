@@ -6,7 +6,7 @@ from flask import url_for
 from models import Post
 from login import RegistrationForm
 from login import LoginForm
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user, login_required
 
 @app.route("/")
 def index():
@@ -51,6 +51,6 @@ def logout():
 	logout_user()
 	return redirect(url_for('index'))
 
-@app.route("account")
+@app.route("/account")
 def account():
-	return render_template('account.html, title='Account')
+	return render_template('account.html', title='Account')
