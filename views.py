@@ -46,11 +46,11 @@ def login():
 
 
 
-@app.route("/logout")
+@app.route("/logout", methods=['POST'])
 def logout():
 	logout_user()
 	return redirect(url_for('index'))
 
-@app.route("/account")
+@app.route("/account", methods=['POST'])
 def account():
 	return render_template('account.html', title='Account')
